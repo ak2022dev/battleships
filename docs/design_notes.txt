@@ -120,3 +120,8 @@ I have test-driven initialize method for Game class and used attr_reader for unp
 
 Thoughts:
 Considering the data structure for storing the ship when chosen for placement... Perhaps worth going back to test provided and gain ideas from that about the structure. May have to review how multi-dimensional arrays are done in Ruby.
+
+Experimented in irb to check use of multi-dimensional arrays.
+
+May try experimenting with a simple number scheme in a ten-by-ten array, initialised to all zeros. Will test drive next.
+
