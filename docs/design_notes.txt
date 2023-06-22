@@ -103,3 +103,10 @@ As a player
 So that I can prepare for the game
 I would like to place a ship in a board location
 
+Running the program as it stands, I notice that initially it is not saying that there are any ships remaining, whereas the test is expecting 2,5 to be displayed. Perhaps the code needs to be combined with another user story..?
+
+As a player
+So that I can play a more interesting game
+I would like to have a range of ship sizes to choose from
+
+The above seems to fit, and so I may consider the two together.
