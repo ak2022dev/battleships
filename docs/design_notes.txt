@@ -1,0 +1,4 @@
+Design notes for Battleships project
+
+22 June 2023
+I have diagrammed the outline and relationships between the files given in the original template code. Next I will look at the tests (there appears to be only one), viewing this as a specification, enabling me to see more clearly what the methods in the skeleton do. After understanding these I will come to the user stories and then test-driver further work from there.
