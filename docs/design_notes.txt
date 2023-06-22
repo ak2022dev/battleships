@@ -1,4 +1,87 @@
 Design notes for Battleships project
 
-22 June 2023
+22 June 2023 - diagram outline of skeleton code / files provided
+
 I have diagrammed the outline and relationships between the files given in the original template code. Next I will look at the tests (there appears to be only one), viewing this as a specification, enabling me to see more clearly what the methods in the skeleton do. After understanding these I will come to the user stories and then test-driver further work from there.
+
+22 June 2023 - make notes from the test file, treating it as a specification
+
+Reviewing syntax for mocking in rspec, seeing extensive use of doubles in the RSpec tests. It appears to be using named arguments in method calls. Need to double-check syntax for that too. 
+
+The test sets up io as a double identified by symbol :io and sets up game as a double identified as symbol :game which returns 10 for both row and cols methods.
+
+It configures the io double to expect to receive a number of puts methods.
+
+It configures the game to expect to receive unplaced_ships and return an array of doubles, both identified with symbol ship; one returning 2 for its length and one returning 5 for its length.
+
+It expects a sequence of puts and gets, then place_ship, ship_at? and sequence of puts that display the board.
+
+As the above specs are built using doubles, they give us a very clear idea of how the required methods need to behave. Next steps will be to develop them incrementally based on user stories, I expect, which I will look at next.
+
+22 June 23 - checking README.md to choose user stories and test driver
+
+Running the existing code, as-per the README, providing inputs the same as those given in the test code, results in a crash with the following message:
+
+Welcome to the game!
+Set up your ships first.
+You have these ships remaining: 
+Which do you wish to place?
+2
+Vertical or horizontal? [vh]
+v
+Which row?
+3
+Which column?
+2
+OK.
+/home/ark/Documents/Coding/Makers/ruby/battleships/lib/game.rb:12:in `place_ship': wrong number of arguments (given 1, expected 0) (ArgumentError)
+        from /home/ark/Documents/Coding/Makers/ruby/battleships/lib/user_interface.rb:39:in `prompt_for_ship_placement'
+        from /home/ark/Documents/Coding/Makers/ruby/battleships/lib/user_interface.rb:11:in `run'
+        from run.rb:18:in `<main>'
+
+It would appear that the place_ship method needs work. Will also consider the user stories and choose some work accordingly. These are:
+
+As a player
+So that I can prepare for the game
+I would like to place a ship in a board location
+
+As a player
+So that I can play a more interesting game
+I would like to have a range of ship sizes to choose from
+
+As a player
+So the game is more fun to play
+I would like a nice command line interface that lets me enter ship positions and
+shots using commands (rather than using IRB to interact with objects)
+
+As a player
+So that I can create a layout of ships to outwit my opponent
+I would like to be able to choose the directions my ships face in
+
+As a player
+So that I can have a coherent game
+I would like ships to be constrained to be on the board
+
+As a player
+So that I can have a coherent game
+I would like ships to be constrained not to overlap
+
+As a player
+So that I can win the game
+I would like to be able to fire at my opponent's board
+
+As a player
+So that I can refine my strategy
+I would like to know when I have sunk an opponent's ship
+
+As a player
+So that I know when to finish playing
+I would like to know when I have won or lost
+
+As a player
+So that I can consider my next shot
+I would like to be able to see my hits and misses so far
+
+As a player
+So that I can play against a human opponent
+I would like to play a two-player game
