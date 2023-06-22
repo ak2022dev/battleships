@@ -116,3 +116,8 @@ In the Game class, unplaced_ships method returns [] in the skeleton, perhaps add
 
 May experiment by creating a unit-test for Game class and test-driving it.
 
+I have test-driven initialize method for Game class and used attr_reader for unplaced_ships.
+
+Thoughts:
+Considering the data structure for storing the ship when chosen for placement...
+
