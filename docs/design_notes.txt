@@ -1,8 +1,12 @@
 Design notes for Battleships project
 
+
+
 22 June 2023 - diagram outline of skeleton code / files provided
 
 I have diagrammed the outline and relationships between the files given in the original template code. Next I will look at the tests (there appears to be only one), viewing this as a specification, enabling me to see more clearly what the methods in the skeleton do. After understanding these I will come to the user stories and then test-driver further work from there.
+
+
 
 22 June 2023 - make notes from the test file, treating it as a specification
 
@@ -17,6 +21,8 @@ It configures the game to expect to receive unplaced_ships and return an array o
 It expects a sequence of puts and gets, then place_ship, ship_at? and sequence of puts that display the board.
 
 As the above specs are built using doubles, they give us a very clear idea of how the required methods need to behave. Next steps will be to develop them incrementally based on user stories, I expect, which I will look at next.
+
+
 
 22 June 23 - checking README.md to choose user stories and test driver
 
@@ -85,3 +91,15 @@ I would like to be able to see my hits and misses so far
 As a player
 So that I can play against a human opponent
 I would like to play a two-player game
+
+
+It's quite possible the above have been deliberately ordered for ease of implementation, especially as the first error when running the code appears to require the first user story to be implemented correctly. I will consider this first then and use an emergent design, which can be adapted gradually as we add to the code.
+
+
+
+22 June 23 - working with this user story:
+
+As a player
+So that I can prepare for the game
+I would like to place a ship in a board location
+
