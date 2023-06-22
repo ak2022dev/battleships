@@ -114,3 +114,5 @@ The above seems to fit, and so I may consider the two together.
 Thoughts:
 In the Game class, unplaced_ships method returns [] in the skeleton, perhaps add code to return an array that maybe is initialised to something else, testing gradually; then remove those items from the array as the user places them? We'd need a loop to check they're all placed eventually.
 
+May experiment by creating a unit-test for Game class and test-driving it.
+
