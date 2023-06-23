@@ -50,4 +50,12 @@ RSpec.describe Game do
                             [0,0,0,0,0,0,0,0,0,0]])
     end
   end
+  context "it places ships" do
+    it "places a ship" do
+      # Call place_ship method for game
+      # which calls place_ship method for board
+      # latter will need to be mocked in game unit test
+      # and tested in board unit test
+    end
+  end
 end

@@ -157,3 +157,15 @@ Maybe some thought needs to be given to not returning a reference to the interna
 
 Try refactoring game to inject dependency on board, to enable unit testing using mocks later.
 Potentially use some setup code in rspec to initialise a board double when unit-testing game... Rechecking before and after hooks in rspec...
+
+Having refactored game_spec to use mock Board, need to consider further the interface of Board... 
+Looking at user_interface_spec, seems also need to consider place_ship method. This code is useful:
+
+      expect(game).to receive(:place_ship).with({
+        length: 2,
+        orientation: :vertical,
+        row: 3,
+        col: 2
+      })
+
+Have setup some pseudo-code for place_ship ready to use mock board in game unit test, and test in board unit test.

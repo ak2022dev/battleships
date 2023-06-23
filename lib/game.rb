@@ -12,6 +12,6 @@ class Game
   def cols
   end
 
-  def place_ship
+  def place_ship(length:, orientation:, row:, col:)
   end
 end
