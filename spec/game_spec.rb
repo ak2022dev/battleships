@@ -4,7 +4,17 @@ require_relative "../lib/board"
 RSpec.describe Game do
   
   before(:example) do
-    @board = Board.new(10)
+    @board = double("board")
+    allow(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0],
+                                                    [0,0,0,0,0,0,0,0,0,0]])
   end
 
   context "it manages unplaced ships" do
