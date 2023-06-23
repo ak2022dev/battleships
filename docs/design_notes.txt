@@ -125,3 +125,32 @@ Experimented in irb to check use of multi-dimensional arrays.
 
 May try experimenting with a simple number scheme in a ten-by-ten array, initialised to all zeros. Will test drive next.
 
+
+
+23 June 23 - continuing with these user stories:
+
+As a player
+So that I can prepare for the game
+I would like to place a ship in a board location
+
+As a player
+So that I can play a more interesting game
+I would like to have a range of ship sizes to choose from
+
+In addressing the second of these first, I think I will take a cue from tests in skeleton code given, namely:
+
+      expect(io).to receive(:puts).with("You have these ships remaining: 2, 5")
+      expect(io).to receive(:puts).with("Which do you wish to place?")
+      expect(io).to receive(:gets).and_return("2\n")
+      
+Perhaps we store an array of integers representing remaining ships, each integer being equal to the length of that ship.
+
+Wrote and tested code for the above yesterday, passing the array to the constructor of game, as in:
+
+  def initialize(ships_array)
+    @unplaced_ships = ships_array
+  end
+
+Thoughts:
+The game needs to have a board that it will manage, so probably sensible to set that up in the constructor for game. To unit-test game, will need to mock the instance of board.
+
