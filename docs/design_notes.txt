@@ -154,3 +154,6 @@ Wrote and tested code for the above yesterday, passing the array to the construc
 Thoughts:
 The game needs to have a board that it will manage, so probably sensible to set that up in the constructor for game. To unit-test game, will need to mock the instance of board.
 Maybe some thought needs to be given to not returning a reference to the internal data structure of the board and it should be hidden behind access methods. This may be something to return to. 
+
+Try refactoring game to inject dependency on board, to enable unit testing using mocks later.
+Potentially use some setup code in rspec to initialise a board double when unit-testing game... Rechecking before and after hooks in rspec...
