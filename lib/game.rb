@@ -1,5 +1,5 @@
 class Game
-  attr_reader :unplaced_ships
+  attr_reader :unplaced_ships, :board
 
   def initialize(ships_array, grid_size)
     @unplaced_ships = ships_array
