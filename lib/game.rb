@@ -13,5 +13,6 @@ class Game
   end
 
   def place_ship(length:, orientation:, row:, col:)
+    board.place_ship(length: length, orientation: orientation, row: row, col: col)
   end
 end

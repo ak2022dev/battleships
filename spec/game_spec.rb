@@ -56,6 +56,9 @@ RSpec.describe Game do
       # which calls place_ship method for board
       # latter will need to be mocked in game unit test
       # and tested in board unit test
+      expect(@board).to receive(:place_ship).with(length: 2, orientation: :horizontal, row: 3, col: 2)
+      game = Game.new([2,5], @board)
+      game.place_ship(length: 2, orientation: :horizontal, row: 3, col: 2)      
     end
   end
 end
