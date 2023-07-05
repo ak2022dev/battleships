@@ -53,7 +53,7 @@ RSpec.describe Game do
   end
 
   context "it places ships" do
-    it "places a ship" do
+    it "places a ship of length 1 horizontally" do
       # Call place_ship method for game
       # which calls place_ship method for board
       # latter will need to be mocked in game unit test
@@ -84,7 +84,7 @@ RSpec.describe Game do
                             [0,0,0,0,0,0,0,0,0,0]])
     end
 
-    it "places a ship" do
+    it "places a ship of length 2 horizontally" do
       expect(@board).to receive(:place_ship).with(length: 2, orientation: :horizontal, row: 3, col: 2)
       expect(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
                                                        [0,0,0,0,0,0,0,0,0,0],
@@ -111,7 +111,7 @@ RSpec.describe Game do
                             [0,0,0,0,0,0,0,0,0,0]])
     end
 
-    it "places a ship" do
+    it "places a ship of length 5 horizontally" do
       expect(@board).to receive(:place_ship).with(length: 5, orientation: :horizontal, row: 3, col: 2)
       expect(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
                                                        [0,0,0,0,0,0,0,0,0,0],
