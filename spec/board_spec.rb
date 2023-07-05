@@ -37,6 +37,21 @@ RSpec.describe Board do
                             [0,0,0,0,0,0,0,0,0,0],
                             [0,0,0,0,0,0,0,0,0,0]])
     end
+    it "places a ship" do
+      board = Board.new(10)
+      board.place_ship(length: 2, orientation: :horizontal, row: 3, col: 2)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,1,1,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
   end
 end
 
