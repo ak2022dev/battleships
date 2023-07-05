@@ -15,5 +15,4 @@ class Board
   def place_ship(length:, orientation:, row:, col:)
     @contents[row-1][col-1]=1
   end
-
 end
