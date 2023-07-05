@@ -13,21 +13,16 @@ class Board
   end
 
   def place_ship(length:, orientation:, row:, col:)
-    if length == 1
-      @contents[row-1][col-1] = 1
-      return
-    end
-    if length > 1
-      if orientation == :horizontal
-        # Need to fill subsequent columns in given row
-        (0...length).each do |column_offset|
-          @contents[row-1][col-1+column_offset] = 1
-        end
-      else # assuming orientation == :vertical
-        (0...length).each do |row_offset|
-          @contents[row-1+row_offset][col-1] = 1
-        end
+    if orientation == :horizontal
+      # Need to fill subsequent columns in given row
+      (0...length).each do |column_offset|
+        @contents[row-1][col-1+column_offset] = 1
+      end
+    else # assuming orientation == :vertical
+      (0...length).each do |row_offset|
+        @contents[row-1+row_offset][col-1] = 1
       end
     end
   end
+
 end
