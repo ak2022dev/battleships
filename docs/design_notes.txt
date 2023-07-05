@@ -198,3 +198,19 @@ I would like to place a ship in a board location
 As a player
 So that I can play a more interesting game
 I would like to have a range of ship sizes to choose from
+
+Above two user stories are satisfied now, but for "the happy path". Error handling to be added later.
+
+This third user story has also been satisfied for its "happy path". Error handling to be added later.
+
+As a player
+So that I can create a layout of ships to outwit my opponent
+I would like to be able to choose the directions my ships face in
+
+The next user story I'd like to consider is this, which addresses an unhappy path for some of the previously implemented stories:
+
+As a player
+So that I can have a coherent game
+I would like ships to be constrained to be on the board
+
+
