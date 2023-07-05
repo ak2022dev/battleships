@@ -22,7 +22,7 @@ RSpec.describe Board do
   end
 
   context "it places ships" do
-    it "places a ship" do
+    it "places a ship of length one horizontally" do
       board = Board.new(10)
       board.place_ship(length: 1, orientation: :horizontal, row: 3, col: 2)
       result = board.contents
@@ -37,7 +37,7 @@ RSpec.describe Board do
                             [0,0,0,0,0,0,0,0,0,0],
                             [0,0,0,0,0,0,0,0,0,0]])
     end
-    it "places a ship" do
+    it "places a ship of length two horizontally" do
       board = Board.new(10)
       board.place_ship(length: 2, orientation: :horizontal, row: 3, col: 2)
       result = board.contents
@@ -52,7 +52,7 @@ RSpec.describe Board do
                             [0,0,0,0,0,0,0,0,0,0],
                             [0,0,0,0,0,0,0,0,0,0]])
     end
-    it "places a ship" do
+    it "places a ship of length 5 horizontally" do
       board = Board.new(10)
       board.place_ship(length: 5, orientation: :horizontal, row: 3, col: 2)
       result = board.contents
