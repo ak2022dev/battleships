@@ -85,10 +85,6 @@ RSpec.describe Game do
     end
 
     it "places a ship" do
-      # Call place_ship method for game
-      # which calls place_ship method for board
-      # latter will need to be mocked in game unit test
-      # and tested in board unit test
       expect(@board).to receive(:place_ship).with(length: 2, orientation: :horizontal, row: 3, col: 2)
       expect(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
                                                        [0,0,0,0,0,0,0,0,0,0],
