@@ -137,7 +137,92 @@ RSpec.describe Game do
                             [0,0,0,0,0,0,0,0,0,0],
                             [0,0,0,0,0,0,0,0,0,0]])
     end
-    
+
+    it "places a ship of length 1 vertically" do
+      # Call place_ship method for game
+      # which calls place_ship method for board
+      # latter will need to be mocked in game unit test
+      # and tested in board unit test
+      expect(@board).to receive(:place_ship).with(length: 1, orientation: :vertical, row: 3, col: 2)
+      expect(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0]])
+      game = Game.new([1,2,5], @board)
+      game.place_ship(length: 1, orientation: :vertical, row: 3, col: 2)
+      result = game.board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
+
+    it "places a ship of length 2 vertically" do
+      expect(@board).to receive(:place_ship).with(length: 2, orientation: :vertical, row: 3, col: 2)
+      expect(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0]])
+      game = Game.new([1,2,5], @board)
+      game.place_ship(length: 2, orientation: :vertical, row: 3, col: 2)
+      result = game.board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
+
+    it "places a ship of length 5 vertically" do
+      expect(@board).to receive(:place_ship).with(length: 5, orientation: :vertical, row: 3, col: 2)
+      expect(@board).to receive(:contents).and_return([[0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,1,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0],
+                                                       [0,0,0,0,0,0,0,0,0,0]])
+      game = Game.new([1,2,5], @board)
+      game.place_ship(length: 5, orientation: :vertical, row: 3, col: 2)
+      result = game.board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,1,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
+
   end
 
 end
