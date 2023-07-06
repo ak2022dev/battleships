@@ -13,6 +13,9 @@ class Board
   end
 
   def place_ship(length:, orientation:, row:, col:)
+    if row < 1
+      raise "ship not on board"
+    end
     if orientation == :horizontal
       # Need to fill subsequent columns in given row
       (0...length).each do |column_offset|
