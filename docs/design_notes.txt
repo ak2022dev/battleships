@@ -218,3 +218,10 @@ I would like ships to be constrained to be on the board
 
 Idea: start by passing some more regular tests first, then move onto new tests for error conditions.
 
+User story chosen above completed. Next one to work on:
+
+As a player
+So the game is more fun to play
+I would like a nice command line interface that lets me enter ship positions and
+shots using commands (rather than using IRB to interact with objects)
+
