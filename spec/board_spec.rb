@@ -112,6 +112,111 @@ RSpec.describe Board do
                             [0,0,0,0,0,0,0,0,0,0],
                             [0,0,0,0,0,0,0,0,0,0]])
     end
+    it "places a ship of length five vertically at top right corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :vertical, row: 1, col: 10)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
+    it "places a ship of length five vertically at bottom right corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :vertical, row: 6, col: 10)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1],
+                            [0,0,0,0,0,0,0,0,0,1]])
+    end
+    it "places a ship of length five vertically at bottom left corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :vertical, row: 6, col: 1)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [1,0,0,0,0,0,0,0,0,0],
+                            [1,0,0,0,0,0,0,0,0,0],
+                            [1,0,0,0,0,0,0,0,0,0],
+                            [1,0,0,0,0,0,0,0,0,0],
+                            [1,0,0,0,0,0,0,0,0,0]])
+    end
+    it "places a ship of length five horizontally at top left corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :horizontal, row: 1, col: 1)
+      result = board.contents
+      expect(result).to eq([[1,1,1,1,1,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
+    it "places a ship of length five horizontally at top right corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :horizontal, row: 1, col: 6)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,1,1,1,1,1],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0]])
+    end
+    it "places a ship of length five horizontally at bottom left corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :horizontal, row: 10, col: 1)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [1,1,1,1,1,0,0,0,0,0]])
+    end
+    it "places a ship of length five horizontally at bottom right corner" do
+      board = Board.new(10)
+      board.place_ship(length: 5, orientation: :horizontal, row: 10, col: 6)
+      result = board.contents
+      expect(result).to eq([[0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,1,1,1,1,1]])
+    end
   end
 end
 
