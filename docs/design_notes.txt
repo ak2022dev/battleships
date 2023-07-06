@@ -214,3 +214,7 @@ So that I can have a coherent game
 I would like ships to be constrained to be on the board
 
 
+06 July 23 - continuing starting with above user story
+
+Idea: start by passing some more regular tests first, then move onto new tests for error conditions.
+
