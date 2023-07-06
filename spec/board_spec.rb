@@ -221,9 +221,21 @@ RSpec.describe Board do
   end
 
   context "it detects error if ship not placed correctly within board" do
-    it "detects error if ship placed to left of board" do
+    it "detects error if ship placed above board" do
       board = Board.new(10)
       expect {board.place_ship(length: 1, orientation: :horizontal, row: 0, col: 1)}.to raise_error("ship not on board")
+    end
+    it "detects error if ship placed to right of board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 1, col: 11)}.to raise_error("ship not on board")
+    end
+    it "detects error if ship placed to left of board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 1, col: 0)}.to raise_error("ship not on board")
+    end
+    it "detects error if ship placed below board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 11, col: 1)}.to raise_error("ship not on board")
     end
   end
 end

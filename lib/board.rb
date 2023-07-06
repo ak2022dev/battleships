@@ -13,7 +13,7 @@ class Board
   end
 
   def place_ship(length:, orientation:, row:, col:)
-    if row < 1
+    if row < 1 || row > 10 || col < 1 || col > 10
       raise "ship not on board"
     end
     if orientation == :horizontal
