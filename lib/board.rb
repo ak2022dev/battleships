@@ -16,6 +16,9 @@ class Board
     if row < 1 || row > @contents.length || col < 1 || col > @contents[row-1].length
       raise "ship not on board"
     end
+    if orientation == :horizontal && (col+length-1 > @contents[row-1].length)
+      raise "ship not on board"
+    end
     if orientation == :horizontal
       # Need to fill subsequent columns in given row
       (0...length).each do |column_offset|

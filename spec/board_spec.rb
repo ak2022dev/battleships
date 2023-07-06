@@ -237,6 +237,22 @@ RSpec.describe Board do
       board = Board.new(10)
       expect {board.place_ship(length: 1, orientation: :horizontal, row: 11, col: 1)}.to raise_error("ship not on board")
     end
+    it "detects error if ship starts on board would extend off right of board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 2, orientation: :horizontal, row: 1, col: 10)}.to raise_error("ship not on board")
+    end
+    it "detects error if ship starts on board would extend off right of board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 2, orientation: :horizontal, row: 10, col: 10)}.to raise_error("ship not on board")
+    end
+    it "detects error if ship starts on board would extend off right of board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 3, orientation: :horizontal, row: 1, col: 10)}.to raise_error("ship not on board")
+    end
+    it "detects error if ship starts on board would extend off right of board" do
+      board = Board.new(10)
+      expect {board.place_ship(length: 3, orientation: :horizontal, row: 1, col: 9)}.to raise_error("ship not on board")
+    end
   end
 end
 
