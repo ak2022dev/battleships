@@ -64,6 +64,7 @@ RSpec.describe UserInterface do
       expect(io).to receive(:gets).and_return("10\n")
       expect(io).to receive(:puts).with("Which column?")
       expect(io).to receive(:gets).and_return("2\n")
+      expect(io).to receive(:puts).with("OK.")
       expect(game).to receive(:place_ship).with({
         length: 2,
         orientation: :vertical,

@@ -223,51 +223,51 @@ RSpec.describe Board do
   context "it detects error if ship not placed correctly within board" do
     it "detects error if ship placed above board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 1, orientation: :horizontal, row: 0, col: 1)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 0, col: 1)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship placed to right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 1, orientation: :horizontal, row: 1, col: 11)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 1, col: 11)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship placed to left of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 1, orientation: :horizontal, row: 1, col: 0)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 1, col: 0)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship placed below board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 1, orientation: :horizontal, row: 11, col: 1)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 1, orientation: :horizontal, row: 11, col: 1)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 2, orientation: :horizontal, row: 1, col: 10)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 2, orientation: :horizontal, row: 1, col: 10)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 2, orientation: :horizontal, row: 10, col: 10)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 2, orientation: :horizontal, row: 10, col: 10)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 3, orientation: :horizontal, row: 1, col: 10)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 3, orientation: :horizontal, row: 1, col: 10)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 3, orientation: :horizontal, row: 1, col: 9)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 3, orientation: :horizontal, row: 1, col: 9)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off bottom of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 2, orientation: :vertical, row: 10, col: 1)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 2, orientation: :vertical, row: 10, col: 1)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off bottom of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 2, orientation: :vertical, row: 10, col: 10)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 2, orientation: :vertical, row: 10, col: 10)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 3, orientation: :vertical, row: 10, col: 10)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 3, orientation: :vertical, row: 10, col: 10)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
     it "detects error if ship starts on board would extend off right of board" do
       board = Board.new(10)
-      expect {board.place_ship(length: 3, orientation: :horizontal, row: 9, col: 10)}.to raise_error("ship not on board")
+      expect {board.place_ship(length: 3, orientation: :horizontal, row: 9, col: 10)}.to raise_exception("Error: your ship would not be positioned on the board")
     end
   end
 end

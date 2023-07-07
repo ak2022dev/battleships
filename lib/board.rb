@@ -14,13 +14,13 @@ class Board
 
   def place_ship(length:, orientation:, row:, col:)
     if row < 1 || row > @contents.length || col < 1 || col > @contents[row-1].length
-      raise "ship not on board"
+      raise "Error: your ship would not be positioned on the board"
     end
     if orientation == :horizontal && (col+length-1 > @contents[row-1].length)
-      raise "ship not on board"
+      raise "Error: your ship would not be positioned on the board"
     end
     if orientation == :vertical && (row+length-1 > @contents.length)
-      raise "ship not on board"
+      raise "Error: your ship would not be positioned on the board"
     end
     if orientation == :horizontal
       # Need to fill subsequent columns in given row
