@@ -225,3 +225,15 @@ So the game is more fun to play
 I would like a nice command line interface that lets me enter ship positions and
 shots using commands (rather than using IRB to interact with objects)
 
+This was chosen first because it may be useful to have this input method already in place when it comes to testing placement of ships isn't overlapping although rspec tests will also be added for that.
+
+
+07 July 23 - picking up with above user story
+
+On trying ruby run.rb to see what happens when running the skeleton code, get an error message due to wrong number of parameter in definition of initialise method for Game class. Existing tests were fine for unit-testing Game class but its interface needs to match how it's being used in the run method of the user interface, so need to consider some changes at some stage.
+
+Meantime, returning to user story currently focused on: looking at the tests in user_interface_spec.rb. They are very specific in stating expectations about how user input is to be taken. Will use those to drive the implementation. 
+
+The tests to allow user to set up ships are partly passed using the implementation in the run, ships_unplaced_message and prompt_for_ship_placement methods. All of these appear to have been completed and at the lowest level go to the board implementations worked on previously. Just double-checking if any further io is needed except for error conditions...
+
+Will see about writing some tests that do the I/O and deal with a ship not being on the board.

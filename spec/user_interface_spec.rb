@@ -46,5 +46,32 @@ RSpec.describe UserInterface do
       ].join("\n"))
       interface.run
     end
+    it "does not allow the user to set up a ship that would be off the board" do
+      io = double(:io)
+      game = double(:game, rows: 10, cols: 10)
+      interface = UserInterface.new(io, game)
+      expect(io).to receive(:puts).with("Welcome to the game!")
+      expect(io).to receive(:puts).with("Set up your ships first.")
+      expect(game).to receive(:unplaced_ships).and_return([
+        double(:ship, length: 2)
+      ])
+      expect(io).to receive(:puts).with("You have these ships remaining: 2")
+      expect(io).to receive(:puts).with("Which do you wish to place?")
+      expect(io).to receive(:gets).and_return("2\n")
+      expect(io).to receive(:puts).with("Vertical or horizontal? [vh]")
+      expect(io).to receive(:gets).and_return("v\n")
+      expect(io).to receive(:puts).with("Which row?")
+      expect(io).to receive(:gets).and_return("10\n")
+      expect(io).to receive(:puts).with("Which column?")
+      expect(io).to receive(:gets).and_return("2\n")
+      expect(game).to receive(:place_ship).with({
+        length: 2,
+        orientation: :vertical,
+        row: 10,
+        col: 2
+      })
+      expect(io).to receive(:puts).with("Error: your ship would not be positioned on the board")
+      interface.run
+    end
   end
 end
