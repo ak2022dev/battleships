@@ -172,3 +172,71 @@ Have setup some pseudo-code for place_ship ready to use mock board in game unit 
 
 
 04 July 23 - resuming project today
+=======
+05 July 23 - resuming work on this, some disruption due to building work and commitments:
+
+Will just go through sequence of previous commits to re-orient myself into project first... Reading the code from the various files has been useful but even more useful is reading this notes file. Will pick-up with the pseudo-code written in the test file, mentioned above and see how that goes. This is for the game_spec.rb file. 
+
+Looking at this code in the spec file, to continue through to implementation.
+
+  context "it places ships" do
+    it "places a ship" do
+      # Call place_ship method for game
+      # which calls place_ship method for board
+      # latter will need to be mocked in game unit test
+      # and tested in board unit test
+      expect(@board).to receive(:place_ship).with(length: 2, orientation: :horizontal, row: 3, col: 2)
+      game = Game.new([2,5], @board)
+      game.place_ship(length: 2, orientation: :horizontal, row: 3, col: 2)      
+    end
+  end
+
+And for context, the user stories are these:
+
+As a player
+So that I can prepare for the game
+I would like to place a ship in a board location
+
+As a player
+So that I can play a more interesting game
+I would like to have a range of ship sizes to choose from
+
+Above two user stories are satisfied now, but for "the happy path". Error handling to be added later.
+
+This third user story has also been satisfied for its "happy path". Error handling to be added later.
+
+As a player
+So that I can create a layout of ships to outwit my opponent
+I would like to be able to choose the directions my ships face in
+
+The next user story I'd like to consider is this, which addresses an unhappy path for some of the previously implemented stories:
+
+As a player
+So that I can have a coherent game
+I would like ships to be constrained to be on the board
+
+
+06 July 23 - continuing starting with above user story
+
+Idea: start by passing some more regular tests first, then move onto new tests for error conditions.
+
+User story chosen above completed. Next one to work on:
+
+As a player
+So the game is more fun to play
+I would like a nice command line interface that lets me enter ship positions and
+shots using commands (rather than using IRB to interact with objects)
+
+This was chosen first because it may be useful to have this input method already in place when it comes to testing placement of ships isn't overlapping although rspec tests will also be added for that.
+
+
+07 July 23 - picking up with above user story
+
+On trying ruby run.rb to see what happens when running the skeleton code, get an error message due to wrong number of parameter in definition of initialise method for Game class. Existing tests were fine for unit-testing Game class but its interface needs to match how it's being used in the run method of the user interface, so need to consider some changes at some stage.
+
+Meantime, returning to user story currently focused on: looking at the tests in user_interface_spec.rb. They are very specific in stating expectations about how user input is to be taken. Will use those to drive the implementation. 
+
+The tests to allow user to set up ships are partly passed using the implementation in the run, ships_unplaced_message and prompt_for_ship_placement methods. All of these appear to have been completed and at the lowest level go to the board implementations worked on previously. Just double-checking if any further io is needed except for error conditions...
+
+Will see about writing some tests that do the I/O and deal with a ship not being on the board.
+
