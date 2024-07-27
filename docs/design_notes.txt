@@ -169,3 +169,6 @@ Looking at user_interface_spec, seems also need to consider place_ship method. T
       })
 
 Have setup some pseudo-code for place_ship ready to use mock board in game unit test, and test in board unit test.
+
+
+04 July 23 - resuming project today
